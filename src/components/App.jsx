@@ -2,12 +2,15 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
+import notes from "../notes";
 
-const App = () => {
+const App = props => {
   return (
     <div>
       <Header />
-      <Note />
+      {notes.map(notes => {
+        return <Note key={notes.key} title={notes.title} des={notes.content} />;
+      })}
       <Footer />
     </div>
   );
